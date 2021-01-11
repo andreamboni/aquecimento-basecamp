@@ -30,3 +30,18 @@ Quando eu vou declarar uma variável, não há necessidade de utilizar o ``$``. 
 Se eu quiser listar todos os arquivos .sh do diretório que estou, basta usar ``ls *.sh`` ou ``echo *.sh``. Se eu estiver em outro diretório eu posso fazer ``ls /meudiretorio/ *.sh`` ou ``echo /meudiretorio/ *.sh``.
 
 Para copiar tudo de um diretório para outro, basta usar ``cp /tmp/a/* /tmp/b/``. Se quiser copiar todos ``.txt``, ``cp /tmp/a/*.txt /tmp/b/``
+
+## Testes 
+
+O shell interpreta o símbolo ``[`` como teste. 
+
+```shell
+$ type [
+[ is a shell builtin
+$ which [
+/usr/bin/[
+$ ls -l /usr/bin/[
+lrwxrwxrwx 1 root root 4 Mar 27 2000 /usr/bin/[ -> test
+$ ls -l /usr/bin/test
+-rwxr-xr-x 1 root root 35368 Mar 27  2000 /usr/bin/test
+```
