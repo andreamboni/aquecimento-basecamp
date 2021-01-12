@@ -22,7 +22,7 @@ The value of eight and a half is: 8.500000
 
 int main()
 {
-	printf("The value of seven is: %f\n", 7 0);
-	printf("The value of eight and a half is: %float\n", 8.5);
+	printf("The value of seven is: %f\n", 7.0);
+	printf("The value of eight and a half is: %f\n", 8.5);
 	return 0;
 }

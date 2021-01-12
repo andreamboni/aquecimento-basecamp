@@ -30,7 +30,16 @@ int main(void)
 	int yValue=9;
 	int result;
 	int bigResult;
-	
+
+	xValue = xValue + 3; // xValue = 8
+	yValue = yValue - xValue; // yValue = 1
+	result = xValue * yValue; // result = 8
+	result = result + result; // result = 16
+	result--; // result = 15
+	yValue = result % result; // yValue = 0
+	result = xValue + result + result; // xValue = 38
+	bigResult = result * result * result; // bigResult = 
+	result = result + xValue * yValue;
 	/* 
 		increment xValue by 3
 		decrement yValue by xValue
