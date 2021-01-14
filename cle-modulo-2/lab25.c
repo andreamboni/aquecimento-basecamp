@@ -38,6 +38,18 @@
 
 int main()
 {
-	/* your code */
+	float valueA, valueB;
+
+	printf("Value A: ");
+	scanf("%f", &valueA);
+	printf("Value B: ");
+	scanf("%f", &valueB);
+
+	printf("Value A: %f\n", valueA);
+	printf("Value B: %f\n", valueB);
+	printf("%f + %f = %f\n", valueA, valueB, valueA + valueB);
+	printf("%f - %f = %f\n", valueA, valueB, valueA - valueB);
+	printf("%f * %f = %f\n", valueA, valueB, valueA * valueB);
+
 	return 0;
 }

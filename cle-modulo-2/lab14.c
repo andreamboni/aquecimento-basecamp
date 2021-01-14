@@ -9,7 +9,9 @@ Using operators,
 Using shortcut and pre/post increment/decrement operators,
 Building simple expressions,
 Translating verbal description into programming language
+
 Scenario
+
 Take a look at the code we've provided in the editor: it assigns two integer values, manipulates them and finally outputs the result and bigresult variables.
 
 The problem is that the manipulations have been described using natural language, so the code is completely useless now.
@@ -32,17 +34,15 @@ int main(void)
 	int result;
 	int bigResult;
 	
-	/* 
-		increment xValue by 3
-		decrement yValue by xValue
-		multiply xValue times yValue giving result
-		increment result by result
-		decrement result by 1
-		assign result modulo result to yValue
-		increment result by result added to xValue
-		assign result times result times result to bigResult
-		increment result by xValue times yValue 
-	*/
+	xValue += 3;
+	yValue -= xValue;
+	result = xValue * yValue;
+	result += result;
+	result--;
+	yValue = result % result;
+	result += result + xValue;
+	bigResult = result * result * result;
+	result += xValue * yValue;
 	
 	printf("result: %d\n", result);
 	printf("big result: %d\n", bigResult);

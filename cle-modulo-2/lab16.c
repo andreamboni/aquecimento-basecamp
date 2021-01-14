@@ -23,8 +23,8 @@ int main()
 	char lastLetter = 'Z';
 	char lastSmallLetter = 'z';
 	printf("Upper case letters beetween (and with) '%c' and '%c' is : %d\n", 
-		lastLetter, firstSmallLetter, lastLetter firstLetter 1);
+		lastLetter, firstLetter, lastLetter - firstLetter + 1);
 	printf("Lower case letters beetween (and with) '%c' and '%c' is : %d\n", 
-		lastSmallLetter, firstSmallLetter, lastSmallLetter, firstLetter, 1);
+		lastSmallLetter, firstSmallLetter, lastSmallLetter - firstSmallLetter + 1);
 	return 0;
 }

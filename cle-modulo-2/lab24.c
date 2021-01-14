@@ -26,6 +26,16 @@
 
 int main()
 {
-	/* your code */
+	int daysWeek;
+	float piValue;
+
+	printf("How many days in the week: ");
+	scanf("%i", &daysWeek);
+
+	printf("The value of Pi to two points: ");
+	scanf("%f", &piValue);
+
+	printf("There are %i days in the week.\n", daysWeek);
+	printf("Pi value is %.2f.\n", piValue);
 	return 0;
 }

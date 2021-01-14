@@ -25,9 +25,9 @@ int main()
 {
 	float startValue = 100;
 	float interestRate = 0.015;
-	float firstYearValue;
-	float secondYearValue;
-	float thirdYearValue;
+	float firstYearValue = startValue * interestRate + startValue;
+	float secondYearValue = firstYearValue * interestRate + firstYearValue;
+	float thirdYearValue = secondYearValue * interestRate + secondYearValue;
 	/* Your code */
 	printf("After first year: %f\n", firstYearValue);
 	printf("After second year: %f\n", secondYearValue);

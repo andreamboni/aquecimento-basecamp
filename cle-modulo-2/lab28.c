@@ -47,18 +47,52 @@
 // The day of the year: 365
 
 #include <stdio.h>
+#include <stdlib.h>
+
+int arrayLeapYear[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+int arrayYear[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+int dayNumber, monthNumber, yearNumber, isLeap, totalDays = 0;
+
+
+
+void countDays(void){
+
+	if ((yearNumber % 4 == 0 && yearNumber % 100 != 0) || yearNumber % 400 == 0) {
+		isLeap = 1;
+		for(int countMonth = 0;countMonth < monthNumber;countMonth++)
+		{
+			totalDays += arrayLeapYear[countMonth];
+		}
+	} else {
+		isLeap = 0;
+		for(int countMonth = 0;countMonth < monthNumber;countMonth++)
+		{
+			totalDays += arrayYear[countMonth];
+		}
+	}
+
+	if(dayNumber == arrayYear[monthNumber]) {
+		printf("The day of the year: %i\n", totalDays);
+	} else if(dayNumber != arrayYear[monthNumber - 1] && isLeap == 0) {
+		if(dayNumber == 29 && monthNumber == 2) {
+			printf("There is no 29 day on month 2\n");
+			exit(1); 
+		}
+		printf("The day of the year: %i\n", totalDays - (arrayYear[monthNumber - 1] - dayNumber));
+	} else if(dayNumber != arrayYear[monthNumber - 1] && isLeap == 1) {
+		printf("The day of the year: %i\n", totalDays - (arrayLeapYear[monthNumber - 1] - dayNumber));
+	}
+}
 
 int main()
 {
-	/* your code */
-	/* because you may not know the else instruction yet, 
-	   this simple formula will help you to check if a year is a leap year */
-		if (year % 400 == 0)
-			puts("Leap");
-		else if (year % 100 == 0)
-			puts("Not leap");
-		else if (year % 4 == 0)
-			puts("Leap");
-	/* your code */
+	printf("Insert a day number: ");
+	scanf("%i", &dayNumber);
+	printf("Insert a month number: ");
+	scanf("%i", &monthNumber);
+	printf("Insert a year number: ");
+	scanf("%i", &yearNumber);
+
+	countDays();
 	return 0;
 }

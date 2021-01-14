@@ -46,5 +46,23 @@
 
 int main()
 {
+	int arrayYear[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	int dayNumber, monthNumber, totalDays = 0;
+
+	printf("Insert a day number: ");
+	scanf("%i", &dayNumber);
+	printf("Insert a month number: ");
+	scanf("%i", &monthNumber);
+
+	for(int countMonth = 0;countMonth < monthNumber;countMonth++)
+	{
+		totalDays += arrayYear[countMonth];
+	}
+
+	if(dayNumber == arrayYear[monthNumber]) {
+		printf("The day of the year: %i\n", totalDays);
+	} else {
+		printf("The day of the year: %i\n", totalDays - (arrayYear[monthNumber - 1] - dayNumber));
+	}
 	return 0;
 }
